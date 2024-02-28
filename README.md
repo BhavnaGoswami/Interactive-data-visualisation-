@@ -1,9 +1,6 @@
-# Interactive-data-visualisation-
-from django.db import models
+from django.urls import path
+from charts.views import chart_view
 
-class Data(models.Model):
-    name = models.CharField(max_length=100)
-    value = models.IntegerField()
-
-    def __str__(self):
-        return self.name
+urlpatterns = [
+    path('', chart_view, name='chart_view'),
+]
